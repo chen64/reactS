@@ -16,5 +16,3 @@ ReactDOM.render(
   </Provider>,
   document.querySelector("#root")
 );
-
-//fix react-stripe-checkout
