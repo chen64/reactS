@@ -39,7 +39,7 @@ class Header extends Component {
             className="left-logo"
             style={{ margin: "0 10px" }}
           >
-            EmailS
+            Email-Surv
           </Link>
           <ul className="right">{this.renderContent()}</ul>
         </div>
@@ -47,6 +47,7 @@ class Header extends Component {
     );
   }
 }
+//destructure
 const mapStateToProps = ({ auth }) => {
   return { auth };
 };

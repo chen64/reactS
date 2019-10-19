@@ -13,10 +13,6 @@ mongoose.connect(keys.mongoURI, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
-// (async function() {
-//   const url = await ngrok.connect(5000);
-//   console.log(url);
-// });
 
 const app = express();
 

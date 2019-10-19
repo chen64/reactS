@@ -1,5 +1,5 @@
 const _ = require("lodash");
-const Path = require("path-parser").dafault;
+const Path = require("path-parser").default;
 const { URL } = require("url");
 const mongoose = require("mongoose");
 const requireLogin = require("../middlewares/reqLogin");
@@ -22,7 +22,7 @@ module.exports = app => {
   });
 
   app.post("/api/surveys/webhooks", (req, res) => {
-    const p = new Path("/api/surveys/:surveyId:choice");
+    const p = new Path("/api/surveys/:surveyId/:choice");
     _.chain(req.body)
       .map(({ email, url }) => {
         const match = p.test(new URL(url).pathname);
@@ -31,7 +31,7 @@ module.exports = app => {
         }
       })
       .compact()
-      .uniqby("email", "surveyId")
+      .uniqBy("email", "surveyId")
       .each(({ surveyId, email, choice }) => {
         Survey.updateOne(
           {
@@ -76,6 +76,4 @@ module.exports = app => {
   });
 };
 
-//188 incase dup
-//189
-//193 incase mongo
+//190 mongo/d

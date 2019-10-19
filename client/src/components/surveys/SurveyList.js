@@ -6,7 +6,7 @@ class SurveyList extends Component {
   componentDidMount() {
     this.props.fetchSurveys();
   }
-
+  //card
   renderSurveys() {
     return this.props.surveys.reverse().map(survey => {
       return (
@@ -19,8 +19,8 @@ class SurveyList extends Component {
             </p>
           </div>
           <div className="card-action">
-            <a>Yes:{submitSurvey.yes}</a>
-            <a>No:{submitSurvey.no}</a>
+            <a>Yes:{survey.yes}</a>
+            <a>No:{survey.no}</a>
           </div>
         </div>
       );
