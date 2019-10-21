@@ -13,7 +13,7 @@ class App extends Component {
   }
   render() {
     return (
-      <div className="container">
+      <div className="container grey lighten-2" id="back">
         <BrowserRouter>
           <div className="container">
             <Header />
