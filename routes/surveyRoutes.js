@@ -50,7 +50,7 @@ module.exports = app => {
       .value();
     res.send({});
   });
-
+  //https://grebvreib.serveo.net/api/surveys/webhooks
   app.post("/api/surveys", requireLogin, requireCredit, async (req, res) => {
     const { title, subject, body, recipients } = req.body;
 
@@ -66,7 +66,7 @@ module.exports = app => {
       const mailer = new Mailer(survey, surveyTemplate(survey));
       await mailer.send();
       await survey.save();
-      req.user.credits -= 1;
+      req.user.credits -= 3;
       const user = await req.user.save();
 
       res.send(user);

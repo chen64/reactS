@@ -39,7 +39,7 @@ class Header extends Component {
             className="left-logo"
             style={{ margin: "0 10px" }}
           >
-            Email-Surv
+            Email-Sender
           </Link>
           <ul className="right">{this.renderContent()}</ul>
         </div>
